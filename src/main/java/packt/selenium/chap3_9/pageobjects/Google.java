@@ -25,15 +25,10 @@ public class Google {
     }
     public GoogleSearchPage goToSearchPage(){
         driver.findElement(By.id("lst-ib")).sendKeys("Mastering Selenium Testing Tools");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        String name= driver.findElement(By.name("btnK")).getText();
-        System.out.println("Outside"+name);
-       /* WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("resultStats")));*/
+        driver.findElement(By.name("btnK")).click();
+        System.out.println("Outside");
+         WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("resultStats")));
         return new GoogleSearchPage(driver);
     }
 }
