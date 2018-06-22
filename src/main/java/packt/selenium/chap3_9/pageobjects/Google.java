@@ -23,7 +23,7 @@ public class Google {
     }
     public GoogleSearchPage goToSearchPage(){
         driver.findElement(By.id("lst-ib")).sendKeys("Mastering Selenium Testing Tools");
-        driver.findElement(By.name("btnK")).click();
+        driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[3]/center/input[1]")).click();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("resultStats")));
         return new GoogleSearchPage(driver);
