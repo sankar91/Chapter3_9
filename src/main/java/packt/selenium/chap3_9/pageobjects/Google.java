@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.datatransfer.SystemFlavorMap;
+
 /**
  * Created by Ripon on 11/19/2015.
  */
@@ -23,9 +25,10 @@ public class Google {
     }
     public GoogleSearchPage goToSearchPage(){
         driver.findElement(By.id("lst-ib")).sendKeys("Mastering Selenium Testing Tools");
-        driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[3]/center/input[1]")).click();
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("resultStats")));
+        String name= driver.findElement(By.name("btnK")).getText();
+        System.out.println("Outside"+name);
+       /* WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("resultStats")));*/
         return new GoogleSearchPage(driver);
     }
 }
