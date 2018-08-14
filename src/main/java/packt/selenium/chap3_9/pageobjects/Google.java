@@ -8,9 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.datatransfer.SystemFlavorMap;
 
-/**
- * Created by Ripon on 11/19/2015.
- */
+
 public class Google {
     private WebDriver driver;
     private String baseURL;
@@ -20,7 +18,7 @@ public class Google {
         baseURL = "https://www.google.com/";
         driver.get(baseURL + "?gws_rd=cr,ssl&ei=qZlNVpOUMNCauQS0iYmoCA&fg=1");
         System.out.println(driver.getTitle());
-        if (!driver.getTitle().equals("Google--is a")){
+        if (!driver.getTitle().equals("Google")){
             throw new WrongPageException("Incorrect page for Google Home page");
         }
     }
