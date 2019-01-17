@@ -25,7 +25,7 @@ public class Google {
     public GoogleSearchPage goToSearchPage(){
         driver.findElement(By.name("q")).sendKeys("Mastering Selenium Testing Tools");
         driver.findElement(By.name("q")).sendKeys(Keys.TAB);
-        driver.findElement(By.name("btnK")).click();
+        driver.findElement(By.name("q")).submit();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("resultStats")));
         return new GoogleSearchPage(driver);
