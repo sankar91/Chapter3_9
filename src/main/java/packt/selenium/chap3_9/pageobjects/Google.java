@@ -18,8 +18,8 @@ public class Google {
         baseURL = "https://www.google.com/";
         driver.get(baseURL + "?gws_rd=cr,ssl&ei=qZlNVpOUMNCauQS0iYmoCA&fg=1");
         System.out.println(driver.getTitle());
-        if (!driver.getTitle().equals("Google Title")){
-            throw new WrongPageException("Incorrect page for Google Home ");
+        if (!driver.getTitle().equals("Google")){
+            throw new WrongPageException("Incorrect page for Google Home");
         }
     }
     public GoogleSearchPage goToSearchPage(){
